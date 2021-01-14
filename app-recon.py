@@ -30,8 +30,7 @@ def subscription_recon_sougou():
 
 def mini_program_recon():
 	url = "https://mp.weixin.qq.com/wxa-cgi/innersearch/subsearch"
-	data = r'query=58&offset_buf={"page_param":[{"subsys_type":1,"server_offset":0,"server_limit":120,"index_step":3000,"index_offset":30}],"client_offset":0,"client_limit":8}&from_h5=0&begid=0&longitude=0&latitude=0&h5version=65900700&subsys_type=1&sub_type=1&q_highlight=&search_id=c19ee740-2d06-e6d4-cfb3-06c114a47b08&source=0&scene=70&search_scene=1&session_id=437d8cd4-0a13-9621-415b-2b47bb7fa6b7&ext_buf=&business_type=105&cookie=cpx3VhudKBXDnwAq6sgvwRHWUEyKRQJg7XBfBEjAjBwnb9jbGkYnB6isAeLPjqN8n%252F43P9HwWva2AAOyYRpomw%253D%253D%257C%257C%257C08dffbbda3660591e95cacdab0c3c8058e6eeb0dd9368c8a469957e359b4587f3c3fead271fc8e11b0b14a611d8cf92cae776f02127aca28016a8029a8ec0c0c5b3b22c48a17f2403603278ff3fce32644b5ef1e9161f71d62dc974a6f295b84943c020aa7deb78708d0024a6632c3de31d853855233b667832181fd4cbd5b8d&client_version=1660944639&device=15&sugtype=3&sugid=11462302230123654519&sugpos=0&prefixsug=58&sugbuf='
-	res = requests.post(url,params=data).text
+	data = r'' # 搜索抓包，替换为你的请求内容，index_step参数控制结果中小程序的数量
 	pattern = re.compile(r'nickName":"(.*?)","path')
 	mini_program = re.findall(pattern,res)
 	return mini_program			
